@@ -1,8 +1,8 @@
 ﻿using CoreLayer.Entities;
 
-namespace EntitiesLayer.DTOs.ColorDto
+namespace EntitiesLayer.DTOs.CalculationDTO
 {
-    public class CalculationDeleteDto : IDto
+    public class CalculationAddDto : IDto
     {
         public string Name { get; set; }
     }

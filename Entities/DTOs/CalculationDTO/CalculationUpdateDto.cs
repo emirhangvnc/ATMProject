@@ -1,6 +1,6 @@
 ﻿using CoreLayer.Entities;
 
-namespace EntitiesLayer.DTOs.ColorDto
+namespace EntitiesLayer.DTOs.CalculationDTO
 {
     public class CalculationUpdateDto : IDto
     {
