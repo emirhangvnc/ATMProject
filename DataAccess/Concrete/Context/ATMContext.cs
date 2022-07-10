@@ -13,5 +13,7 @@ namespace DataAccessLayer.Concrete.Context
         public DbSet<User> Users { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Calculation> Calculations { get; set; }
+        public DbSet<UserOperationClaim> UserOperationClaims { get; set; }
+        public DbSet<OperationClaim> OperationClaims { get; set; }
     }
 }
