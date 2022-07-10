@@ -7,8 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Abstract\" />
     <Folder Include="Concrete\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Core\CoreLayer.csproj" />
+    <ProjectReference Include="..\Entities\EntitiesLayer.csproj" />
   </ItemGroup>
 
 </Project>

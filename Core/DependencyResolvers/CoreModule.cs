@@ -1,6 +1,5 @@
 ﻿using CoreLayer.CrossCuttingConcerns.Caching;
 using CoreLayer.CrossCuttingConcerns.Caching.Microsoft;
-using CoreLayer.CrossCuttingConcerns.Caching.Redis;
 using CoreLayer.Utilities.IoC;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;

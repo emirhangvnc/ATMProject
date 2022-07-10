@@ -1,6 +1,6 @@
 ﻿using Microsoft.IdentityModel.Tokens;
 
-namespace Core.Utilities.Security.Encryption
+namespace CoreLayer.Utilities.Security.Encryption
 {
     public class SigningCredentialsHelper
     {

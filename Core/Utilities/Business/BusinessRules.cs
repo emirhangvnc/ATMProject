@@ -1,4 +1,4 @@
-﻿using CoreLayer.Utilities.Results.Abstract;
+﻿using CoreLayer.Utilities.Results;
 
 namespace CoreLayer.Utilities.Business
 {

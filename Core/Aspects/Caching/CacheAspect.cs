@@ -1,7 +1,7 @@
 ﻿using Castle.DynamicProxy;
-using Core.CrossCuttingConcerns.Caching;
-using Core.Utilities.Interceptors;
-using Core.Utilities.IoC;
+using CoreLayer.CrossCuttingConcerns.Caching;
+using CoreLayer.Utilities.Interceptors;
+using CoreLayer.Utilities.IoC;
 using Microsoft.Extensions.DependencyInjection;
 using System.Linq;
 

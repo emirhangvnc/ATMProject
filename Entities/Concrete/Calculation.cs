@@ -1,7 +1,8 @@
-﻿
-namespace Entities.Concrete
+﻿using CoreLayer.DataAccess;
+
+namespace EntitiesLayer.Concrete
 {
-    public class Calculation
+    public class Calculation : IEntity
     {
         public int Id { get; set; }
         public int CustomerId { get; set; }

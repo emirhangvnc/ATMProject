@@ -1,6 +1,5 @@
-﻿using System;
-
-namespace Core.Utilities.Security.JWT
+﻿
+namespace CoreLayer.Utilities.Security.JWT
 {
     public class AccessToken
     {

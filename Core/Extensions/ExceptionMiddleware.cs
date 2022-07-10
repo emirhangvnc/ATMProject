@@ -1,7 +1,4 @@
-﻿using System;
-using System.Net;
-using System.Threading.Tasks;
-using CoreLayer.Extensions.Core.Extensions;
+﻿using System.Net;
 using FluentValidation;
 using Microsoft.AspNetCore.Http;
 

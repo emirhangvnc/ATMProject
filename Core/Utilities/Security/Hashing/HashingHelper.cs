@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace Core.Utilities.Security.Hashing
+namespace CoreLayer.Utilities.Security.Hashing
 {
     public class HashingHelper
     {

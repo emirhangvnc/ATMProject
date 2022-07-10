@@ -1,7 +1,8 @@
-﻿
-namespace Entities.Concrete
+﻿using CoreLayer.DataAccess;
+
+namespace EntitiesLayer.Concrete
 {
-    public class User
+    public class User:IEntity
     {
         public int Id { get; set; }
         public string FirstName { get; set; }

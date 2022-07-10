@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
-using Core.Entities.Concrete;
-using Core.Extensions;
-using Core.Utilities.Security.Encryption;
-using Core.Utilities.Security.JWT;
+using CoreLayer.Extensions;
+using CoreLayer.Utilities.Security.Encryption;
+using CoreLayer.Utilities.Security.Jwt;
+using CoreLayer.Utilities.Security.JWT;
+using EntitiesLayer.Concrete;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 
-namespace Core.Utilities.Security.Jwt
+namespace BusinessLayer.Helpers
 {
     public class JwtHelper : ITokenHelper
     {

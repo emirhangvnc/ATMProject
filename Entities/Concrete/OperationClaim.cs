@@ -2,9 +2,9 @@
 
 namespace EntitiesLayer.Concrete
 {
-    public class Customer:IEntity
+    public class OperationClaim : IEntity
     {
         public int Id { get; set; }
-        public int CustomerId { get; set; }
+        public string Name { get; set; }
     }
 }

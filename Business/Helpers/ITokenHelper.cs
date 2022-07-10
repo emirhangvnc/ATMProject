@@ -1,7 +1,7 @@
-﻿using Core.Entities.Concrete;
-using System.Collections.Generic;
+﻿using CoreLayer.Utilities.Security.JWT;
+using EntitiesLayer.Concrete;
 
-namespace Core.Utilities.Security.JWT
+namespace BusinessLayer.Helpers
 {
     public interface ITokenHelper
     {

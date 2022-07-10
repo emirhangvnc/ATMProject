@@ -1,4 +1,5 @@
-﻿namespace Core.Utilities.Security.Jwt
+﻿
+namespace CoreLayer.Utilities.Security.Jwt
 {
     public class TokenOptions
     {
