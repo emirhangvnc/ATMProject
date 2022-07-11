@@ -1,7 +1,7 @@
 ﻿using EntitiesLayer.Concrete;
 using CoreLayer.Entities;
 
-namespace DataAccess.Abstract
+namespace DataAccessLayer.Abstract
 {
     public interface ICustomerDal : IEntityRepository<Customer>
     {
