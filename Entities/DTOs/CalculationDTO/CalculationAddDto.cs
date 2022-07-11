@@ -4,6 +4,7 @@ namespace EntitiesLayer.DTOs.CalculationDTO
 {
     public class CalculationAddDto : IDto
     {
-        public string Name { get; set; }
+        public int CustomerId { get; set; }
+        public decimal Balance { get; set; }
     }
 }

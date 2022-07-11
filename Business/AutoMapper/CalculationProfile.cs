@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using EntitiesLayer.Concrete;
-using EntitiesLayer.DTOs.ColorDto;
+using EntitiesLayer.DTOs.CalculationDTO;
 
 namespace BusinessLayer.AutoMapper
 {

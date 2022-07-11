@@ -1,4 +1,5 @@
 ﻿using EntitiesLayer.Concrete;
+using EntitiesLayer.Concrete.Infos;
 using Microsoft.EntityFrameworkCore;
 
 namespace DataAccessLayer.Concrete.Context
@@ -15,5 +16,7 @@ namespace DataAccessLayer.Concrete.Context
         public DbSet<Calculation> Calculations { get; set; }
         public DbSet<UserOperationClaim> UserOperationClaims { get; set; }
         public DbSet<OperationClaim> OperationClaims { get; set; }
+        public DbSet<Country> Countries { get; set; }
+        public DbSet<City> Cities { get; set; }
     }
 }
