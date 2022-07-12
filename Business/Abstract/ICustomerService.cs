@@ -1,10 +1,11 @@
 ﻿using BusinessLayer.Abstract.Base;
-using CoreLayer.Utilities.Results;
 using EntitiesLayer.Concrete;
+using EntitiesLayer.DTOs.CustomerDTO;
 
 namespace BusinessLayer.Abstract
 {
-    public interface ICustomerService : IBaseService<Customer>
+    public interface ICustomerService : IBaseService<Customer>,IAddDtoService<CustomerAddDto>,
+        IDeleteDtoService<CustomerDeleteDto>,IUpdatedDtoService<CustomerUpdateDto>
     {
     }
 }

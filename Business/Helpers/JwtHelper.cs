@@ -8,6 +8,7 @@ using CoreLayer.Utilities.Security.Encryption;
 using CoreLayer.Utilities.Security.Jwt;
 using CoreLayer.Utilities.Security.JWT;
 using EntitiesLayer.Concrete;
+using EntitiesLayer.Concrete.Infos;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 

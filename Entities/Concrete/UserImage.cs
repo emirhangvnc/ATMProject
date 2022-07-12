@@ -1,7 +1,8 @@
-﻿
+﻿using CoreLayer.DataAccess;
+
 namespace EntitiesLayer.Concrete
 {
-    public class UserImage
+    public class UserImage:IEntity
     {
         public int Id { get; set; }
         public int UserId { get; set; }

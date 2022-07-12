@@ -5,7 +5,7 @@ using EntitiesLayer.Concrete;
 
 namespace DataAccessLayer.Concrete.EntityFramework
 {
-    public class EfUserOperationClaimDal : EfEntityRepositoryBase<UserOperationClaim, ATMContext>, IUserOperationClaimDal
+    public class EfUserImageDal : EfEntityRepositoryBase<UserImage, ATMContext>, IUserImageDal
     {
     }
 }

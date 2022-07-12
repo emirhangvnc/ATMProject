@@ -1,5 +1,6 @@
 ﻿using CoreLayer.Utilities.Security.JWT;
 using EntitiesLayer.Concrete;
+using EntitiesLayer.Concrete.Infos;
 
 namespace BusinessLayer.Helpers
 {

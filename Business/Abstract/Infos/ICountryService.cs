@@ -1,10 +1,11 @@
 ﻿using BusinessLayer.Abstract.Base;
-using CoreLayer.Utilities.Results;
 using EntitiesLayer.Concrete.Infos;
+using EntitiesLayer.DTOs.CountryDTO;
 
 namespace BusinessLayer.Abstract.Infos
 {
-    public interface ICountryService : IBaseService<Country>
+    public interface ICountryService : IBaseService<Country>, IAddDtoService<CountryAddDto>,
+        IDeleteDtoService<CountryDeleteDto>, IUpdatedDtoService<CountryUpdateDto>
     {
     }
 }

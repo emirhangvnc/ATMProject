@@ -3,10 +3,7 @@ using BusinessLayer.Abstract;
 using BusinessLayer.Abstract.Infos;
 using BusinessLayer.Concrete;
 using BusinessLayer.Concrete.Infos;
-using Castle.DynamicProxy;
-using CoreLayer.Utilities.Interceptors;
-using CoreLayer.Utilities.Security.Jwt;
-using CoreLayer.Utilities.Security.JWT;
+using BusinessLayer.Helpers;
 using DataAccessLayer.Abstract;
 using DataAccessLayer.Abstract.Infos;
 using DataAccessLayer.Concrete.EntityFramework;
@@ -30,14 +27,11 @@ namespace BusinessLayer.DependencyResolvers.Autofac
             builder.RegisterType<CustomerManager>().As<ICustomerService>().SingleInstance();
             builder.RegisterType<EfCustomerDal>().As<ICustomerDal>().SingleInstance();
 
-            builder.RegisterType<OperationClaimManager>().As<IOperationClaimService>().SingleInstance();
-            builder.RegisterType<EfOperationClaimDal>().As<IOperationClaimDal>().SingleInstance();
-
-            builder.RegisterType<UserOperationClaimManager>().As<IUserOperationClaimService>().SingleInstance();
-            builder.RegisterType<EfUserOperationClaimDal>().As<IUserOperationClaimDal>().SingleInstance();
-
             builder.RegisterType<UserManager>().As<IUserService>().SingleInstance();
             builder.RegisterType<EfUserDal>().As<IUserDal>().SingleInstance();
+
+            builder.RegisterType<AuthManager>().As<IAuthService>().SingleInstance();
+            builder.RegisterType<JwtHelper>().As<ITokenHelper>().SingleInstance();
 
             //var assembly = System.Reflection.Assembly.GetExecutingAssembly();
             //builder.RegisterAssemblyTypes(assembly).AsImplementedInterfaces()

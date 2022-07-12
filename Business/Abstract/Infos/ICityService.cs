@@ -1,10 +1,11 @@
 ﻿using BusinessLayer.Abstract.Base;
-using CoreLayer.Utilities.Results;
 using EntitiesLayer.Concrete.Infos;
+using EntitiesLayer.DTOs.CityDTO;
 
 namespace BusinessLayer.Abstract.Infos
 {
-    public interface ICityService: IBaseService<City>
+    public interface ICityService: IBaseService<City>,IAddDtoService<CityAddDto>,
+        IDeleteDtoService<CityDeleteDto>,IUpdatedDtoService<CityUpdateDto>
     {
     }
 }

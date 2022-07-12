@@ -3,7 +3,7 @@ using CoreLayer.Entities;
 
 namespace DataAccessLayer.Abstract
 {
-    public interface IUserOperationClaimDal : IEntityRepository<UserOperationClaim>
+    public interface IUserImageDal : IEntityRepository<UserImage>
     {
     }
 }
