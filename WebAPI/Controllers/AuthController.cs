@@ -15,7 +15,8 @@ namespace API.Controllers
             _authService=authService;
         }
 
-        [HttpPost("register")]
+        [HttpPost]
+        [Route("[action]")]
         public ActionResult Register(UserForRegisterDto userForRegisterDto)
         {
             var userExists = _authService.UserExists(userForRegisterDto.Email);

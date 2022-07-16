@@ -2,6 +2,8 @@
 using BusinessLayer.Abstract.Infos;
 using BusinessLayer.Constants.TR;
 using BusinessLayer.Constants.TR.Base;
+using BusinessLayer.ValidationRules.Infos.CountryValidator;
+using CoreLayer.Aspects.Validation;
 using CoreLayer.Utilities.Results;
 using DataAccessLayer.Abstract.Infos;
 using EntitiesLayer.Concrete.Infos;
@@ -28,18 +30,18 @@ namespace BusinessLayer.Concrete.Infos
         {
             return new SuccessDataResult<Country>(_countryDal.Get(c => c.Id == id),CountryMessagesTR.CountryListed);
         }
-
+        [ValidationAspect(typeof(CountryAddDtoValidator))]
         public IResult Add(CountryAddDto addedDto)
         {
             var result = _countryDal.Get(c => c.CountryCode == addedDto.CountryCode);
             if (result != null)
-                return new ErrorResult($"Böyle Bir {CountryMessagesTR.Country} {BaseConstantsTR.AlreadyAvailable}");
+                return new ErrorResult($"Böyle Bir {CountryMessagesTR.Country} {BaseConstantsTR.AlreadyExists}");
 
             var country = _mapper.Map<Country>(addedDto);
             _countryDal.Add(country);
             return new SuccessResult(CountryMessagesTR.CountryAdded);
         }
-
+        [ValidationAspect(typeof(CountryDeleteDtoValidator))]
         public IResult Delete(CountryDeleteDto deletedDto)
         {
             var result = _countryDal.Get(c => c.Id == deletedDto.Id);
@@ -49,7 +51,7 @@ namespace BusinessLayer.Concrete.Infos
             _countryDal.Delete(result);
             return new SuccessResult(CountryMessagesTR.CountryDeleted);
         }
-
+        [ValidationAspect(typeof(CountryUpdateDtoValidator))]
         public IResult Update(CountryUpdateDto updatedDto)
         {
             var result = _countryDal.Get(c => c.Id == updatedDto.Id);

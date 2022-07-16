@@ -15,6 +15,30 @@ namespace BusinessLayer.Constants.TR
             {
                 return $"{CityMessagesTR.City} {BaseConstantsTR.Name} {BaseConstantsTR.NotNull}";
             }
+            internal override string CityListed()
+            {
+                return $"{CityMessagesTR.City} {BaseConstantsTR.Listed}";
+            }
+            internal override string CitiesListed()
+            {
+                return $"{CityMessagesTR.City}ler {BaseConstantsTR.Listed}";
+            }
+            internal override string CityAdded()
+            {
+                return $"{CityMessagesTR.City} {BaseConstantsTR.Added}";
+            }
+            internal override string CityDeleted()
+            {
+                return $"{CityMessagesTR.City} {BaseConstantsTR.Deleted}";
+            }
+            internal override string CityUpdated()
+            {
+                return $"{CityMessagesTR.City} {BaseConstantsTR.Updated}";
+            }
+            internal override string CityNotFound()
+            {
+                return $"{CityMessagesTR.City} {BaseConstantsTR.NotFound}";
+            }
         }
         readonly static Worker worker = new Worker();
         public static string City = worker.City();

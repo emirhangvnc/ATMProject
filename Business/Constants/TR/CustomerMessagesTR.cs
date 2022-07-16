@@ -11,11 +11,38 @@ namespace BusinessLayer.Constants.TR
             {
                 return "Müşteri";
             }
+            internal override string CustomerNotNull()
+            {
+                return $"{CustomerMessagesTR.Customer} {BaseConstantsTR.NotNull}";
+            }
+            internal override string CustomerListed()
+            {
+                return $"{CustomerMessagesTR.Customer} {BaseConstantsTR.Listed}";
+            }
+            internal override string CustomersListed()
+            {
+                return $"{CustomerMessagesTR.Customer}ler {BaseConstantsTR.Listed}";
+            }
+            internal override string CustomerAdded()
+            {
+                return $"{CustomerMessagesTR.Customer} {BaseConstantsTR.Added}";
+            }
+            internal override string CustomerDeleted()
+            {
+                return $"{CustomerMessagesTR.Customer} {BaseConstantsTR.Deleted}";
+            }
+            internal override string CustomerUpdated()
+            {
+                return $"{CustomerMessagesTR.Customer} {BaseConstantsTR.Updated}";
+            }
+            internal override string CustomerNotFound()
+            {
+                return $"{CustomerMessagesTR.Customer} {BaseConstantsTR.NotFound}";
+            }
         }
         readonly static Worker worker = new Worker();
         public static string Customer = worker.Customer();
         public static string CustomerNotNull = worker.CustomerNotNull();
-        public static string CustomerIdNotNull = worker.CustomerIdNotNull();
         public static string CustomerListed = worker.CustomerListed();
         public static string CustomersListed = worker.CustomersListed();
         public static string CustomerAdded = worker.CustomerAdded();

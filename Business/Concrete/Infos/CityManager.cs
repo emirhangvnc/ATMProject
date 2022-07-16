@@ -2,6 +2,8 @@
 using BusinessLayer.Abstract.Infos;
 using BusinessLayer.Constants.TR;
 using BusinessLayer.Constants.TR.Base;
+using BusinessLayer.ValidationRules.Infos.CityValidator;
+using CoreLayer.Aspects.Validation;
 using CoreLayer.Utilities.Results;
 using DataAccessLayer.Abstract.Infos;
 using EntitiesLayer.Concrete.Infos;
@@ -28,18 +30,18 @@ namespace BusinessLayer.Concrete.Infos
         {
             return new SuccessDataResult<City>(_cityDal.Get(c=>c.Id==id), CityMessagesTR.CityListed);
         }
-
+        [ValidationAspect(typeof(CityAddDtoValidator))]
         public IResult Add(CityAddDto addedDto)
         {
             var result = _cityDal.Get(c => c.CityCode == addedDto.CityCode);
             if (result != null)
-                return new ErrorResult($"Böyle Bir {CityMessagesTR.City} {BaseConstantsTR.AlreadyAvailable}");
+                return new ErrorResult($"Böyle Bir {CityMessagesTR.City} {BaseConstantsTR.AlreadyExists}");
 
             var city = _mapper.Map<City>(addedDto);
             _cityDal.Add(city);
             return new SuccessResult(CityMessagesTR.CityAdded);
         }
-
+        [ValidationAspect(typeof(CityDeleteDtoValidator))]
         public IResult Delete(CityDeleteDto deletedDto)
         {
             var result = _cityDal.Get(c => c.Id == deletedDto.Id);
@@ -49,7 +51,7 @@ namespace BusinessLayer.Concrete.Infos
             _cityDal.Delete(result);
             return new SuccessResult(CityMessagesTR.CityDeleted);
         }
-
+        [ValidationAspect(typeof(CityUpdateDtoValidator))]
         public IResult Update(CityUpdateDto updatedDto)
         {
             var result = _cityDal.Get(c => c.Id == updatedDto.Id);

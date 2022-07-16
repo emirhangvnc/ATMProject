@@ -11,6 +11,14 @@ namespace BusinessLayer.Constants.TR
             {
                 return "Üye Resmi";
             }
+            internal override string UserImageListed()
+            {
+                return $"{UserImageMessagesTR.UserImage} {BaseConstantsTR.Listed}";
+            }
+            internal override string UserImagesListed()
+            {
+                return $"{UserImageMessagesTR.UserImage} {BaseConstantsTR.Listed}";
+            }
         }
         readonly static Worker worker = new Worker();
         public static string UserImage = worker.UserImage();

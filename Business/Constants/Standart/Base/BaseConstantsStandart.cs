@@ -1,71 +1,101 @@
 ﻿
 namespace BusinessLayer.Constants.Standart.Base
 {
-    public static class BaseConstantsStandart
+    internal static class BaseConstantsStandart
     {
-        public class BaseWorker
+        internal class BaseWorker
         {
-            public virtual string NotNull()
+            internal virtual string NotNull()
             {
                 return "Not Null";
             }
-            public virtual string Added()
+            internal virtual string Added()
             {
                 return "Added";
             }
-            public virtual string Deleted()
+            internal virtual string Deleted()
             {
                 return "Deleted";
             }
-            public virtual string Updated()
+            internal virtual string Updated()
             {
                 return "Updated";
             }
-            public virtual string Listed()
+            internal virtual string Listed()
             {
                 return "Listed";
             }
-            public virtual string Search()
+            internal virtual string Search()
             {
                 return "Search";
             }
-            public virtual string LoginSuccessful()
+            internal virtual string LoginSuccessful()
             {
                 return "Login Successful";
             }
-            public virtual string Summoned()
+            internal virtual string Summoned()
             {
                 return "Summoned";
             }
-            public virtual string AlreadyAvailable()
+            internal virtual string AlreadyExists()
             {
-                return "Already Available";
+                return "Already Exists";
             }
-            public virtual string NotFound()
+            internal virtual string NotFound()
             {
                 return "Not Found";
             }
-            public virtual string Name()
+            internal virtual string Name()
             {
                 return "Name";
             }
-            public virtual string Created()
+            internal virtual string ID()
+            {
+                return "ID";
+            }
+            internal virtual string Created()
             {
                 return "Created";
             }
+            internal virtual string Max()
+            {
+                return "Max";
+            }
+            internal virtual string Min()
+            {
+                return "Min";
+            }
+            internal virtual string Entered()
+            {
+                return "Can Be Entered";
+            }
+            internal virtual string Code()
+            {
+                return "Code";
+            }
+            internal virtual string Password()
+            {
+                return "Password";
+            }
         }
         readonly static BaseWorker worker = new BaseWorker();
-        public static string NotNull = worker.NotNull();
-        public static string Added = worker.Added();
-        public static string Deleted = worker.Deleted();
-        public static string Updated = worker.Updated();
-        public static string Listed = worker.Listed();
-        public static string Search = worker.Search();
-        public static string LoginSuccessful = worker.LoginSuccessful();
-        public static string Summoned = worker.Summoned();
-        public static string AlreadyAvailable = worker.AlreadyAvailable();
-        public static string NotFound = worker.NotFound();
-        public static string Name = worker.Name();
-        public static string Created = worker.Created();
+        internal static string NotNull = worker.NotNull();
+        internal static string Added = worker.Added();
+        internal static string Deleted = worker.Deleted();
+        internal static string Updated = worker.Updated();
+        internal static string Listed = worker.Listed();
+        internal static string Search = worker.Search();
+        internal static string LoginSuccessful = worker.LoginSuccessful();
+        internal static string Summoned = worker.Summoned();
+        internal static string AlreadyExists = worker.AlreadyExists();
+        internal static string NotFound = worker.NotFound();
+        internal static string Name = worker.Name();
+        internal static string ID = worker.ID();
+        internal static string Created = worker.Created();
+        internal static string Max = worker.Max();
+        internal static string Min = worker.Min();
+        internal static string Entered = worker.Entered();
+        internal static string Code = worker.Code();
+        internal static string Password = worker.Password();
     }
 }

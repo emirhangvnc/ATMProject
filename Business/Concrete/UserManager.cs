@@ -45,7 +45,7 @@ namespace BusinessLayer.Concrete
         {
             var result = _userDal.Get(c => c.Email == addedDto.Email);
             if (result != null)
-                return new ErrorResult($"Böyle Bir {UserMessagesTR.User} {BaseConstantsTR.AlreadyAvailable}");
+                return new ErrorResult($"Böyle Bir {UserMessagesTR.User} {BaseConstantsTR.AlreadyExists}");
 
             var user = _mapper.Map<User>(addedDto);
             _userDal.Add(user);

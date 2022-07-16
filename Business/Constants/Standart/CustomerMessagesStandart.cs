@@ -14,10 +14,6 @@ namespace BusinessLayer.Constants.Standart
             {
                 return $"{CustomerMessagesStandart.Customer} {BaseConstantsStandart.NotNull}";
             }
-            internal virtual string CustomerIdNotNull()
-            {
-                return $"{CustomerMessagesStandart.Customer} Id {BaseConstantsStandart.NotNull}";
-            }
             internal virtual string CustomersListed()
             {
                 return $"Customers {BaseConstantsStandart.Listed}";
@@ -46,7 +42,6 @@ namespace BusinessLayer.Constants.Standart
         readonly static CustomerWorker worker = new CustomerWorker();
         internal static string Customer = worker.Customer();
         internal static string CustomerNotNull = worker.CustomerNotNull();
-        internal static string CustomerIdNotNull = worker.CustomerIdNotNull();
         internal static string CustomerListed = worker.CustomerListed();
         internal static string CustomersListed = worker.CustomersListed();
         internal static string CustomerAdded = worker.CustomerAdded();

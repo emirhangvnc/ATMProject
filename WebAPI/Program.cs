@@ -17,7 +17,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddAutoMapper(typeof(AuthProfile));
+builder.Services.AddAutoMapper(typeof(AuthProfile), typeof(CalculationProfile),
+    typeof(CityProfile), typeof(CountryProfile), typeof(CustomerProfile), 
+    typeof(UserImageProfile), typeof(UserProfile));
 
 builder.Services.AddDependencyResolvers(new ICoreModule[] {
                new CoreModule() });

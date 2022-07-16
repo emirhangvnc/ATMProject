@@ -1,14 +1,15 @@
 ﻿using BusinessLayer.Constants.TR;
+using BusinessLayer.Constants.TR.Base;
 using EntitiesLayer.DTOs.CustomerDTO;
 using FluentValidation;
 
-namespace BusinessLayer.ValidationRules.CustomerValidator
+namespace BusinessLayer.ValidationRules.Entities.CustomerValidator
 {
     public class CustomerDeleteDtoValidator : AbstractValidator<CustomerDeleteDto>
     {
         public CustomerDeleteDtoValidator()
         {
-            RuleFor(c => c.Id).NotEmpty().WithMessage(CustomerMessages.CustomerNotNull);
+            RuleFor(c => c.Id).NotEmpty().WithMessage($"{BaseConstantsTR.ID} {BaseConstantsTR.NotNull}");
         }
     }
 }

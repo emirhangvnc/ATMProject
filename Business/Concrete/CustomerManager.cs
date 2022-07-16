@@ -2,7 +2,7 @@
 using BusinessLayer.Abstract;
 using BusinessLayer.Constants.TR;
 using BusinessLayer.Constants.TR.Base;
-using BusinessLayer.ValidationRules.CustomerValidator;
+using BusinessLayer.ValidationRules.Entities.CustomerValidator;
 using CoreLayer.Aspects.Validation;
 using CoreLayer.Utilities.Results;
 using DataAccessLayer.Abstract;
@@ -36,7 +36,7 @@ namespace BusinessLayer.Concrete
         {
             var result = _customerDal.Get(c => c.CustomerId == addedDto.CustomerId);
             if (result != null)
-                return new ErrorResult($"Böyle Bir {CustomerMessagesTR.Customer} {BaseConstantsTR.AlreadyAvailable}");
+                return new ErrorResult($"Böyle Bir {CustomerMessagesTR.Customer} {BaseConstantsTR.AlreadyExists}");
 
             var customer = _mapper.Map<Customer>(addedDto);
             _customerDal.Add(customer);

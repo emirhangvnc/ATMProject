@@ -6,43 +6,97 @@ namespace BusinessLayer.Constants.TR.Base
     {
         private class TRWorker : BaseConstantsStandart.BaseWorker
         {
-            public override string NotNull()
+            internal override string NotNull()
             {
                 return "Boş Geçilemez";
             }
-            public override string Added()
+            internal override string Added()
             {
                 return "Eklendi";
             }
-            public override string Deleted()
+            internal override string Deleted()
             {
                 return "Silindi";
             }
-            public override string Updated()
+            internal override string Updated()
             {
                 return "Güncellendi";
             }
-            public override string Listed()
+            internal override string Listed()
             {
                 return "Listelendi";
             }
-            public override string Search()
+            internal override string Search()
             {
                 return "Aranan";
             }
+            internal override string LoginSuccessful()
+            {
+                return "Giriş Başarılı";
+            }
+            internal override string Summoned()
+            {
+                return "İstenilen";
+            }
+            internal override string AlreadyExists()
+            {
+                return "Zaten Mevcut";
+            }
+            internal override string NotFound()
+            {
+                return "Bulunamadı";
+            }
+            internal override string Name()
+            {
+                return "İsim";
+            }
+            internal override string ID()
+            {
+                return "Birincil Anahtar(ID)";
+            }
+            internal override string Created()
+            {
+                return "Oluşturuldu";
+            }
+            internal override string Max()
+            {
+                return "Maksimum";
+            }
+            internal override string Min()
+            {
+                return "Minimum";
+            }
+            internal override string Entered()
+            {
+                return "Girilebilir";
+            }
+            internal override string Code()
+            {
+                return "Kod";
+            }
+            internal override string Password()
+            {
+                return "Şifre";
+            }
         }
         readonly static TRWorker worker = new TRWorker();
-        public static string NotNull = worker.NotNull();
-        public static string Added = worker.Added();
-        public static string Deleted = worker.Deleted();
-        public static string Updated = worker.Updated();
-        public static string Listed = worker.Listed();
-        public static string Search = worker.Search();
-        public static string LoginSuccessful = worker.LoginSuccessful();
-        public static string Summoned = worker.Summoned();
-        public static string AlreadyAvailable = worker.AlreadyAvailable();
-        public static string NotFound = worker.NotFound();
-        public static string Name = worker.Name();
-        public static string Created = worker.Created();
+        internal static string NotNull = worker.NotNull();
+        internal static string Added = worker.Added();
+        internal static string Deleted = worker.Deleted();
+        internal static string Updated = worker.Updated();
+        internal static string Listed = worker.Listed();
+        internal static string Search = worker.Search();
+        internal static string LoginSuccessful = worker.LoginSuccessful();
+        internal static string Summoned = worker.Summoned();
+        internal static string AlreadyExists = worker.AlreadyExists();
+        internal static string NotFound = worker.NotFound();
+        internal static string Name = worker.Name();
+        internal static string ID = worker.ID();
+        internal static string Created = worker.Created();
+        internal static string Max = worker.Max();
+        internal static string Min = worker.Min();
+        internal static string Entered = worker.Entered();
+        internal static string Code = worker.Code();
+        internal static string Password = worker.Password();
     }
 }

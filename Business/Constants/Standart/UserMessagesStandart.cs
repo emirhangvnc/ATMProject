@@ -40,11 +40,11 @@ namespace BusinessLayer.Constants.Standart
             }
             internal virtual string UserAlreadyExists()
             {
-                return $"{UserMessagesStandart.User} Already Exists";
+                return $"{UserMessagesStandart.User} {BaseConstantsStandart.AlreadyExists}";
             }
             internal virtual string PasswordError()
             {
-                return $"Password Error";
+                return $"{BaseConstantsStandart.Password} Error";
             }
             internal virtual string AccessTokenCreated()
             {

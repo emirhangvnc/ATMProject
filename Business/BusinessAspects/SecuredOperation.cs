@@ -36,7 +36,7 @@ namespace BusinessLayer.BusinessAspects
                     return;
                 }
             }
-            throw new Exception(UserMessages.AuthorizationDenied);
+            throw new Exception(UserMessagesTR.AuthorizationDenied);
         }
     }
 }
