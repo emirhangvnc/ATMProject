@@ -63,6 +63,7 @@ namespace BusinessLayer.Concrete
             return new SuccessResult(UserMessagesTR.UserDeleted);
         }
 
+
         //[ValidationAspect(typeof(UserUpdateDtoValidator))]
         public IResult Update(UserUpdateDto updatedDto)
         {

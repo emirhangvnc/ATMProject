@@ -11,6 +11,10 @@ namespace BusinessLayer.Constants.TR
             {
                 return "Şehir";
             }
+            internal override string CityNameNotNull()
+            {
+                return $"{CityMessagesTR.City} {BaseConstantsTR.Name} {BaseConstantsTR.NotNull}";
+            }
         }
         readonly static Worker worker = new Worker();
         public static string City = worker.City();
