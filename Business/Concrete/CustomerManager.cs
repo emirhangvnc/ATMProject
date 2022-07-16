@@ -22,12 +22,12 @@ namespace BusinessLayer.Concrete
         }
         public IDataResult<List<Customer>> GetAll()
         {
-            return new SuccessDataResult<List<Customer>>(_customerDal.GetAll(), CustomerMessages.CustomersListed);
+            return new SuccessDataResult<List<Customer>>(_customerDal.GetAll(), CustomerMessagesTR.CustomersListed);
         }
 
         public IDataResult<Customer> GetById(int id)
         {
-            return new SuccessDataResult<Customer>(_customerDal.Get(c => c.Id == id), CustomerMessages.CustomerListed);
+            return new SuccessDataResult<Customer>(_customerDal.Get(c => c.Id == id), CustomerMessagesTR.CustomerListed);
 
         }
 
@@ -36,11 +36,11 @@ namespace BusinessLayer.Concrete
         {
             var result = _customerDal.Get(c => c.CustomerId == addedDto.CustomerId);
             if (result != null)
-                return new ErrorResult($"Böyle Bir {CustomerMessages.Customer} {BaseConstants.AlreadyAvailable}");
+                return new ErrorResult($"Böyle Bir {CustomerMessagesTR.Customer} {BaseConstantsTR.AlreadyAvailable}");
 
             var customer = _mapper.Map<Customer>(addedDto);
             _customerDal.Add(customer);
-            return new SuccessResult(CustomerMessages.CustomerAdded);
+            return new SuccessResult(CustomerMessagesTR.CustomerAdded);
         }
 
         [ValidationAspect(typeof(CustomerDeleteDtoValidator))]
@@ -48,10 +48,10 @@ namespace BusinessLayer.Concrete
         {
             var result = _customerDal.Get(c => c.Id == deletedDto.Id);
             if (result == null)
-                return new ErrorResult(CustomerMessages.CustomerNotFound);
+                return new ErrorResult(CustomerMessagesTR.CustomerNotFound);
 
             _customerDal.Delete(result);
-            return new SuccessResult(CustomerMessages.CustomerDeleted);
+            return new SuccessResult(CustomerMessagesTR.CustomerDeleted);
         }
 
         [ValidationAspect(typeof(CustomerUpdateDtoValidator))]
@@ -59,11 +59,11 @@ namespace BusinessLayer.Concrete
         {
             var result = _customerDal.Get(c => c.Id == updatedDto.Id);
             if (result == null)
-                return new ErrorResult(CustomerMessages.CustomerNotFound);
+                return new ErrorResult(CustomerMessagesTR.CustomerNotFound);
 
             var customer = _mapper.Map(updatedDto, result);
             _customerDal.Update(customer);
-            return new SuccessResult(CustomerMessages.CustomerUpdated);
+            return new SuccessResult(CustomerMessagesTR.CustomerUpdated);
         }
     }
 }

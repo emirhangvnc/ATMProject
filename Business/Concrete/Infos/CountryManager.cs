@@ -21,44 +21,44 @@ namespace BusinessLayer.Concrete.Infos
 
         public IDataResult<List<Country>> GetAll()
         {
-            return new SuccessDataResult<List<Country>>(_countryDal.GetAll(),CountryMessages.CountriesListed);
+            return new SuccessDataResult<List<Country>>(_countryDal.GetAll(),CountryMessagesTR.CountriesListed);
         }
 
         public IDataResult<Country> GetById(int id)
         {
-            return new SuccessDataResult<Country>(_countryDal.Get(c => c.Id == id),CountryMessages.CountryListed);
+            return new SuccessDataResult<Country>(_countryDal.Get(c => c.Id == id),CountryMessagesTR.CountryListed);
         }
 
         public IResult Add(CountryAddDto addedDto)
         {
             var result = _countryDal.Get(c => c.CountryCode == addedDto.CountryCode);
             if (result != null)
-                return new ErrorResult($"Böyle Bir {CountryMessages.Country} {BaseConstants.AlreadyAvailable}");
+                return new ErrorResult($"Böyle Bir {CountryMessagesTR.Country} {BaseConstantsTR.AlreadyAvailable}");
 
             var country = _mapper.Map<Country>(addedDto);
             _countryDal.Add(country);
-            return new SuccessResult(CountryMessages.CountryAdded);
+            return new SuccessResult(CountryMessagesTR.CountryAdded);
         }
 
         public IResult Delete(CountryDeleteDto deletedDto)
         {
             var result = _countryDal.Get(c => c.Id == deletedDto.Id);
             if (result == null)
-                return new ErrorResult(CountryMessages.CountryNotFound);
+                return new ErrorResult(CountryMessagesTR.CountryNotFound);
 
             _countryDal.Delete(result);
-            return new SuccessResult(CountryMessages.CountryDeleted);
+            return new SuccessResult(CountryMessagesTR.CountryDeleted);
         }
 
         public IResult Update(CountryUpdateDto updatedDto)
         {
             var result = _countryDal.Get(c => c.Id == updatedDto.Id);
             if (result == null)
-                return new ErrorResult(CountryMessages.CountryNotFound);
+                return new ErrorResult(CountryMessagesTR.CountryNotFound);
 
             var country = _mapper.Map(updatedDto, result);
             _countryDal.Update(country);
-            return new SuccessResult(CountryMessages.CountryUpdated);
+            return new SuccessResult(CountryMessagesTR.CountryUpdated);
         }
     }
 }

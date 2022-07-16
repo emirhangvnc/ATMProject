@@ -15,12 +15,12 @@ namespace BusinessLayer.Concrete
         }
         public IDataResult<List<Calculation>> GetAll()
         {
-            return new SuccessDataResult<List<Calculation>>(_calculationDal.GetAll(), CalculationMessages.CalculationsListed);
+            return new SuccessDataResult<List<Calculation>>(_calculationDal.GetAll(), CalculationMessagesTR.CalculationsListed);
         }
 
         public IDataResult<Calculation> GetById(int id)
         {
-            return new SuccessDataResult<Calculation>(_calculationDal.Get(c => c.Id == id), CalculationMessages.CalculationListed);
+            return new SuccessDataResult<Calculation>(_calculationDal.Get(c => c.Id == id), CalculationMessagesTR.CalculationListed);
 
         }
     }

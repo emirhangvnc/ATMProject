@@ -16,12 +16,12 @@ namespace BusinessLayer.Concrete
 
         public IDataResult<List<UserImage>> GetAll()
         {
-            return new SuccessDataResult<List<UserImage>>(_userImageDal.GetAll(), UserImageMessages.UserImagesListed);
+            return new SuccessDataResult<List<UserImage>>(_userImageDal.GetAll(), UserImageMessagesTR.UserImagesListed);
         }
 
         public IDataResult<UserImage> GetById(int id)
         {
-            return new SuccessDataResult<UserImage>(_userImageDal.Get(u=>u.Id==id), UserImageMessages.UserImageListed);
+            return new SuccessDataResult<UserImage>(_userImageDal.Get(u=>u.Id==id), UserImageMessagesTR.UserImageListed);
 
         }
     }

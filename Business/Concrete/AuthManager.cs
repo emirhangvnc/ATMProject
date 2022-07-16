@@ -36,7 +36,7 @@ namespace BusinessLayer.Concrete
                 Status = true
             };
             _userService.Add(user);
-            return new SuccessDataResult<User>(UserMessages.UserRegistered);
+            return new SuccessDataResult<User>(UserMessagesTR.UserRegistered);
         }
 
         public IResult UserExists(string email)
@@ -44,7 +44,7 @@ namespace BusinessLayer.Concrete
             IResult result = BusinessRules.Run(CheckIfUserExist(email));
             if (result != null)
             {
-                return new ErrorResult(UserMessages.UserAlreadyExists);
+                return new ErrorResult(UserMessagesTR.UserAlreadyExists);
             }
             return new SuccessResult();
         }
@@ -53,7 +53,7 @@ namespace BusinessLayer.Concrete
         {
             var claims = _userService.GetClaims(user.Id);
             var accessToken = _tokenHelper.CreateToken(user, claims.Data);
-            return new SuccessDataResult<AccessToken>(accessToken, UserMessages.AccessTokenCreated);
+            return new SuccessDataResult<AccessToken>(accessToken, UserMessagesTR.AccessTokenCreated);
         }
 
         private IResult CheckIfUserExist(string email)
