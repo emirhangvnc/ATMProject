@@ -14,7 +14,6 @@ namespace API.Controllers
         {
             _authService=authService;
         }
-
         [HttpPost]
         [Route("[action]")]
         public ActionResult Register(UserForRegisterDto userForRegisterDto)
@@ -31,7 +30,6 @@ namespace API.Controllers
             {
                 return Ok(result.Data);
             }
-
             return BadRequest(result.Message);
         }
     }

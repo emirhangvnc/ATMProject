@@ -2,9 +2,8 @@
 
 namespace EntitiesLayer.DTOs.UserImageDTO
 {
-    public class UserImageUpdateDto : IDto
+    public class UserImageUpdateDto : UserImageAddDto,IDto
     {
         public int Id { get; set; }
-        public int UserId { get; set; }
     }
 }

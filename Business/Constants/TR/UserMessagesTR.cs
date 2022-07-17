@@ -11,6 +11,14 @@ namespace BusinessLayer.Constants.TR
             {
                 return "Üye";
             }
+            internal override string UserFirstName()
+            {
+                return $"{UserMessagesTR.User} {BaseConstantsTR.FirstName}";
+            }
+            internal override string UserLastName()
+            {
+                return $"{UserMessagesTR.User} {BaseConstantsTR.LastName}";
+            }
             internal override string UserNameNotNull()
             {
                 return $"{UserMessagesTR.User} {BaseConstantsTR.Name} {BaseConstantsTR.NotNull}";
@@ -66,6 +74,8 @@ namespace BusinessLayer.Constants.TR
         }
         readonly static Worker worker = new Worker();
         public static string User = worker.User();
+        public static string UserFirstName = worker.UserFirstName();
+        public static string UserLastName = worker.UserLastName();
         public static string UserNameNotNull = worker.UserNameNotNull();
         public static string UserListed = worker.UserListed();
         public static string UsersListed = worker.UsersListed();

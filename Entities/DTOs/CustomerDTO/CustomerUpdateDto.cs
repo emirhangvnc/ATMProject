@@ -2,9 +2,8 @@
 
 namespace EntitiesLayer.DTOs.CustomerDTO
 {
-    public class CustomerUpdateDto:IDto
+    public class CustomerUpdateDto:CustomerAddDto,IDto
     {
         public int Id { get; set; }
-        public int CustomerId { get; set; }
     }
 }

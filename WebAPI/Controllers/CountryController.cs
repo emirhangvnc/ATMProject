@@ -14,40 +14,34 @@ namespace API.Controllers
         {
             _countryService = countryService;
         }
-
         [HttpGet]
         [Route("[action]")]
         public IActionResult GetAll()
         {
             var result = _countryService.GetAll();
             if (result.Success)
-            {
                 return Ok(result);
-            }
+
             return BadRequest(result);
         }
-
         [HttpGet]
         [Route("[action]")]
         public IActionResult GetByCountryId(int countryId)
         {
             var result = _countryService.GetById(countryId);
             if (result.Success)
-            {
                 return Ok(result);
-            }
+
             return BadRequest(result);
         }
-
         [HttpPost]
         [Route("[action]")]
         public IActionResult Add(CountryAddDto countryAddDto)
         {
             var result = _countryService.Add(countryAddDto);
             if (result.Success)
-            {
                 return Ok(result);
-            }
+
             return BadRequest(result);
         }
 
@@ -57,9 +51,8 @@ namespace API.Controllers
         {
             var result = _countryService.Delete(countryDeleteDto);
             if (result.Success)
-            {
                 return Ok(result);
-            }
+
             return BadRequest(result);
         }
 
@@ -69,9 +62,8 @@ namespace API.Controllers
         {
             var result = _countryService.Update(countryUpdateDto);
             if (result.Success)
-            {
                 return Ok(result);
-            }
+
             return BadRequest(result);
         }
     }

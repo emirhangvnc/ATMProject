@@ -10,6 +10,14 @@ namespace BusinessLayer.Constants.Standart
             {
                 return $"User";
             }
+            internal virtual string UserFirstName()
+            {
+                return $"{UserMessagesStandart.User} {BaseConstantsStandart.FirstName}";
+            }
+            internal virtual string UserLastName()
+            {
+                return $"{UserMessagesStandart.User} {BaseConstantsStandart.LastName}";
+            }
             internal virtual string UserNameNotNull()
             {
                 return $"{UserMessagesStandart.User} {BaseConstantsStandart.Name} {BaseConstantsStandart.NotNull}";
@@ -69,6 +77,8 @@ namespace BusinessLayer.Constants.Standart
         }
         readonly static UserWorker worker = new UserWorker();
         internal static string User = worker.User();
+        internal static string UserFirstName = worker.UserFirstName();
+        internal static string UserLastName = worker.UserLastName();
         internal static string UserNameNotNull = worker.UserNameNotNull();
         internal static string UserListed = worker.UserListed();
         internal static string UsersListed = worker.UsersListed();

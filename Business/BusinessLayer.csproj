@@ -20,9 +20,4 @@
     <ProjectReference Include="..\Entities\EntitiesLayer.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="ValidationRules\Entities\UserImageValidator\" />
-    <Folder Include="ValidationRules\Entities\UserValidator\" />
-  </ItemGroup>
-
 </Project>

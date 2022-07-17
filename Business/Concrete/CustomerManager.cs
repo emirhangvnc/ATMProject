@@ -28,9 +28,7 @@ namespace BusinessLayer.Concrete
         public IDataResult<Customer> GetById(int id)
         {
             return new SuccessDataResult<Customer>(_customerDal.Get(c => c.Id == id), CustomerMessagesTR.CustomerListed);
-
         }
-
         [ValidationAspect(typeof(CustomerAddDtoValidator))]
         public IResult Add(CustomerAddDto addedDto)
         {
@@ -42,7 +40,6 @@ namespace BusinessLayer.Concrete
             _customerDal.Add(customer);
             return new SuccessResult(CustomerMessagesTR.CustomerAdded);
         }
-
         [ValidationAspect(typeof(CustomerDeleteDtoValidator))]
         public IResult Delete(CustomerDeleteDto deletedDto)
         {
@@ -53,7 +50,6 @@ namespace BusinessLayer.Concrete
             _customerDal.Delete(result);
             return new SuccessResult(CustomerMessagesTR.CustomerDeleted);
         }
-
         [ValidationAspect(typeof(CustomerUpdateDtoValidator))]
         public IResult Update(CustomerUpdateDto updatedDto)
         {

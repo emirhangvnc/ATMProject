@@ -7,6 +7,8 @@ using BusinessLayer.Abstract.Base;
 using EntitiesLayer.DTOs.UserDTO;
 using BusinessLayer.Constants.TR.Base;
 using AutoMapper;
+using CoreLayer.Aspects.Validation;
+using BusinessLayer.ValidationRules.Entities.UserValidator;
 
 namespace BusinessLayer.Concrete
 {
@@ -40,7 +42,7 @@ namespace BusinessLayer.Concrete
             return new SuccessDataResult<List<OperationClaim>>(_userDal.GetClaims(id));
         }
 
-        //[ValidationAspect(typeof(UserAddDtoValidator))]
+        [ValidationAspect(typeof(UserAddDtoValidator))]
         public IResult Add(UserAddDto addedDto)
         {
             var result = _userDal.Get(c => c.Email == addedDto.Email);
@@ -51,8 +53,7 @@ namespace BusinessLayer.Concrete
             _userDal.Add(user);
             return new SuccessResult(UserMessagesTR.UserAdded);
         }
-
-        //[ValidationAspect(typeof(UserDeleteDtoValidator))]
+        [ValidationAspect(typeof(UserDeleteDtoValidator))]
         public IResult Delete(UserDeleteDto deletedDto)
         {
             var result = _userDal.Get(c => c.Id == deletedDto.Id);
@@ -62,9 +63,7 @@ namespace BusinessLayer.Concrete
             _userDal.Delete(result);
             return new SuccessResult(UserMessagesTR.UserDeleted);
         }
-
-
-        //[ValidationAspect(typeof(UserUpdateDtoValidator))]
+        [ValidationAspect(typeof(UserUpdateDtoValidator))]
         public IResult Update(UserUpdateDto updatedDto)
         {
             var result = _userDal.Get(c => c.Id == updatedDto.Id);

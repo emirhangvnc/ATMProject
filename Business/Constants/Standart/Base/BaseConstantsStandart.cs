@@ -77,6 +77,46 @@ namespace BusinessLayer.Constants.Standart.Base
             {
                 return "Password";
             }
+            internal virtual string Invalid()
+            {
+                return "Invalid";
+            }
+            internal virtual string File()
+            {
+                return "File";
+            }
+            internal virtual string Image()
+            {
+                return "Image";
+            }
+            internal virtual string For()
+            {
+                return "For"; 
+            }
+            internal virtual string Extension()
+            {
+                return "Extension";
+            }
+            internal virtual string Accepted()
+            {
+                return "Accepted";
+            }
+            internal virtual string FirstName()
+            {
+                return $"First {BaseConstantsStandart.Name}";
+            }
+            internal virtual string LastName()
+            {
+                return $"Last {BaseConstantsStandart.Name}";
+            }
+            internal virtual string EMail()
+            {
+                return "E-Mail";
+            }
+            internal virtual string DateOfBirth()
+            {
+                return "Date Of Birth";
+            }
         }
         readonly static BaseWorker worker = new BaseWorker();
         internal static string NotNull = worker.NotNull();
@@ -97,5 +137,15 @@ namespace BusinessLayer.Constants.Standart.Base
         internal static string Entered = worker.Entered();
         internal static string Code = worker.Code();
         internal static string Password = worker.Password();
+        internal static string Invalid = worker.Invalid();
+        internal static string File = worker.File();
+        internal static string Image = worker.Image();
+        internal static string For = worker.For();
+        internal static string Extension = worker.Extension();
+        internal static string Accepted = worker.Accepted();
+        internal static string FirstName = worker.FirstName();
+        internal static string LastName = worker.LastName();
+        internal static string EMail = worker.EMail();
+        internal static string DateOfBirth = worker.DateOfBirth();
     }
 }

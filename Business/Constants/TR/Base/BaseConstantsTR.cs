@@ -78,25 +78,71 @@ namespace BusinessLayer.Constants.TR.Base
             {
                 return "Şifre";
             }
+            internal override string Invalid()
+            {
+                return "Geçersiz";
+            }
+            internal override string File()
+            {
+                return "Dosya";
+            }
+            internal override string Image()
+            {
+                return "Fotoraf";
+            }
+            internal override string For()
+            {
+                return "For";
+            }
+            internal override string Extension()
+            {
+                return "Uzantı";
+            }
+            internal override string Accepted()
+            {
+                return "Kabul Edilen";
+            }
+            internal override string FirstName()
+            {
+                return $"{BaseConstantsTR.Name}";
+            }
+            internal override string LastName()
+            {
+                return "Soyad";
+            }
+            internal override string DateOfBirth()
+            {
+                return "Doğum Günü";
+            }
         }
         readonly static TRWorker worker = new TRWorker();
-        internal static string NotNull = worker.NotNull();
-        internal static string Added = worker.Added();
-        internal static string Deleted = worker.Deleted();
-        internal static string Updated = worker.Updated();
-        internal static string Listed = worker.Listed();
-        internal static string Search = worker.Search();
-        internal static string LoginSuccessful = worker.LoginSuccessful();
-        internal static string Summoned = worker.Summoned();
-        internal static string AlreadyExists = worker.AlreadyExists();
-        internal static string NotFound = worker.NotFound();
-        internal static string Name = worker.Name();
-        internal static string ID = worker.ID();
-        internal static string Created = worker.Created();
-        internal static string Max = worker.Max();
-        internal static string Min = worker.Min();
-        internal static string Entered = worker.Entered();
-        internal static string Code = worker.Code();
-        internal static string Password = worker.Password();
+        public static string NotNull = worker.NotNull();
+        public static string Added = worker.Added();
+        public static string Deleted = worker.Deleted();
+        public static string Updated = worker.Updated();
+        public static string Listed = worker.Listed();
+        public static string Search = worker.Search();
+        public static string LoginSuccessful = worker.LoginSuccessful();
+        public static string Summoned = worker.Summoned();
+        public static string AlreadyExists = worker.AlreadyExists();
+        public static string NotFound = worker.NotFound();
+        public static string Name = worker.Name();
+        public static string ID = worker.ID();
+        public static string Created = worker.Created();
+        public static string Max = worker.Max();
+        public static string Min = worker.Min();
+        public static string Entered = worker.Entered();
+        public static string Code = worker.Code();
+        public static string Password = worker.Password();
+        public static string Invalid = worker.Invalid();
+        public static string File = worker.File();
+        public static string Image = worker.Image();
+        public static string For = worker.For();
+        public static string Extension = worker.Extension();
+        public static string Accepted = worker.Accepted();
+        public static string FirstName = worker.FirstName();
+        public static string LastName = worker.LastName();
+        public static string EMail = worker.EMail();
+        public static string DateOfBirth = worker.DateOfBirth();
     }
 }

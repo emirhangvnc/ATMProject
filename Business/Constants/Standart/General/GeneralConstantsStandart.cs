@@ -1,9 +1,4 @@
 ﻿using BusinessLayer.Constants.Standart.Base;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BusinessLayer.Constants.Standart.General
 {
@@ -27,11 +22,17 @@ namespace BusinessLayer.Constants.Standart.General
             {
                 return $"{BaseConstantsStandart.Max} 20 {GeneralConstantsStandart.Character} {BaseConstantsStandart.Entered}";
             }
+            internal virtual string InvalidFileExtension()
+            {
+                return $"{BaseConstantsStandart.Invalid} {BaseConstantsStandart.File} Extension";
+            }
         }
         readonly static GeneralWorker worker = new GeneralWorker();
         internal static string Character = worker.Character();
         internal static string Max50Character = worker.Max50Character();
         internal static string Max30Character = worker.Max30Character();
         internal static string Max20Character = worker.Max20Character();
+        internal static string[] ValidImageFileTypes = { ".JPG", ".JPEG", ".PNG", ".TIF", ".TIFF", ".GIF", ".BMP", ".ICO" };
+        internal static string InvalidFileExtension = worker.InvalidFileExtension();
     }
 }

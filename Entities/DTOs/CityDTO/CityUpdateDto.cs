@@ -2,10 +2,8 @@
 
 namespace EntitiesLayer.DTOs.CityDTO
 {
-    public class CityUpdateDto : IDto
+    public class CityUpdateDto : CityAddDto,IDto
     {
         public int Id { get; set; }
-        public string CityName { get; set; }
-        public string CityCode { get; set; }
     }
 }
